@@ -49,7 +49,7 @@ public class Movement : MonoBehaviour
     }
     void spikeMovementReflection(int reflection, int playerScoreMulti)
     {
-        movementSpeedRange = Random.Range(1f, 2f);
+        movementSpeedRange = Random.Range(0.7f, 2f);
         /*transform.position = transform.position + (Vector3.left * ((moveSpeed + (float)playerScoreMulti) * movementSpeedRange)) * Time.deltaTime;
         if (transform.position.x < leftDeadzone)
         {

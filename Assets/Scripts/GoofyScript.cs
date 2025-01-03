@@ -31,6 +31,7 @@ public class GoofyScript : MonoBehaviour
 	public ParticleSystem jumpParticles;
 	public ParticleSystem deathParticles;
 
+	public int movementSpeed = 20;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -50,22 +51,22 @@ public class GoofyScript : MonoBehaviour
 		{
 			if (Input.GetKeyDown(KeyCode.W))
 			{
-				myRigidbody.velocity = Vector2.up * 20;
+				myRigidbody.velocity = Vector2.up * movementSpeed;
 				Instantiate(jumpParticles, transform.position, Quaternion.identity);
 			}
 			if (Input.GetKeyDown(KeyCode.A))
 			{
-				myRigidbody.velocity = Vector2.left * 20;
+				myRigidbody.velocity = Vector2.left * movementSpeed;
                 Instantiate(jumpParticles, transform.position, Quaternion.identity);
             }
 			if (Input.GetKeyDown(KeyCode.D))
 			{
-				myRigidbody.velocity = Vector2.right * 20;
+				myRigidbody.velocity = Vector2.right * movementSpeed;
                 Instantiate(jumpParticles, transform.position, Quaternion.identity);
             }
 			if (Input.GetKeyDown(KeyCode.S))
 			{
-				myRigidbody.velocity = Vector2.down * 20;
+				myRigidbody.velocity = Vector2.down * movementSpeed;
                 Instantiate(jumpParticles, transform.position, Quaternion.identity);
             }
 			if (transform.position.x > 53.9)
@@ -86,6 +87,10 @@ public class GoofyScript : MonoBehaviour
 			}
 		}
     }
+	void increaseMovementSpeed(int movementSpeed)
+	{
+
+	}
 	void outOfBoundsTeleport(Vector2 newPosition)
 	{
 		transform.position = newPosition;
