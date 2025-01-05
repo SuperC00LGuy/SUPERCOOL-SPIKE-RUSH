@@ -28,63 +28,56 @@ public class bothSpawners : MonoBehaviour
     //Reverse variables
     private float xPos = 69.5f;
     private float yPos = -1.9f;
-    private bool changeMovement = false;
+    public bool changeMovement = false;
         //Invoke
-    public int invokeTime = 65;
-    public int decreaseTime = -5;
+    public float decreaseTime = -5f;
+    public float reflectRate = 20.0f;
+    private float reflectTimer = 0.0f;
+
     void Start()// Start is called before the first frame update
     {
         this.additionalSpawnerCalc = FindObjectOfType<LogicScript>();
-        InvokeRepeating(nameof(switchReflection), invokeTime, decreaseTime);
-        CancelInvoke(nameof(switchReflection));
-        //CHANGED BUT DIDNT TEST
-        //spawnSpike();
-        //spawnArrow();
+        //NOT CALLING CORRECTLY PIECE OF SHIT
+        //InvokeRepeating(nameof(switchReflection), 0, invokeTime); //Starting in 60 seconds every 60 seconds switchReflection gets called
+        //CancelInvoke(nameof(switchReflection));
     }
 
     void Update() // Update is called once per frame
     {
-        /* Check       
-        - ON EVERY INVOKE HIT WE DECREASE INVOKETIME BY 5 UNTIL WE REACH 30 
-        - WOULD HAVE TO CREATE A FUNCTION FOR 
-         * InvokeReapting(nameOf(switchReflection), invokeTime, decreaseTime)
-             * 
-
-            void switchReflection(int& xPosition)
-            {
-                if(changeMovement)
-                {
-                    relfectSpawner(xPosition);
-                    xPosition = Mathf.Abs(xPosition);  
-                    changeMovement = false;
-                }
-                else
-                {
-                    reflectSpawner(xPosition);
-                    xPosition = -(xPosition);
-                    changemovement = true;
-                }
-            {
-         */
         arrowSpawner();
         spikeSpawner();
-        checkInvokeTimer();
+        reflectionTimer();
         checkArrow();
         checkSpike();  
     }
-    public int switchReflection(int xPosition)
+    public void reflectionTimer()
+    {
+        if (reflectTimer < reflectRate)
+        {
+            reflectTimer += Time.deltaTime;
+        }
+        else
+        {
+            xPos = switchReflection(xPos);
+            checkReflectRate();
+            reflectTimer = 0;
+        }
+    }
+    public float switchReflection(float xPosition)
     {
         if(changeMovement)
         {
             reflectSpawner(xPosition);
             xPosition = Mathf.Abs(xPosition);
             changeMovement = false;
+            Debug.Log("changeMovmement is false");
         }
         else
         {
             reflectSpawner(xPosition);
             xPosition = -(xPosition);
-            changeMovement = true; 
+            changeMovement = true;
+            Debug.Log("changeMovement is true");
         }
         return xPosition;
     }
@@ -120,11 +113,11 @@ public class bothSpawners : MonoBehaviour
 
         }
     }
-    public void checkInvokeTimer()
+    public void checkReflectRate()
     {
-        if (invokeTime != 30 && decreaseTime != 0)
+        if (reflectRate != 30 && decreaseTime != 0)
         {
-            invokeTime += decreaseTime;
+            reflectRate += decreaseTime;
         }
         else
         {

@@ -28,14 +28,6 @@ public class Movement : MonoBehaviour
         {
             Debug.Log(" Changer ERROR ERROR ERROR ERROR");
         }
-        if (changer.changeDirection())
-        {
-            Debug.Log(" Changer TRUE ERROR ERROR ERROR " + getPlayerScore());
-        }
-        if (!changer.changeDirection())
-        {
-            Debug.Log(" Changer TRUE ERROR ERROR ERROR " + getPlayerScore());
-        }
     }
 
     // Update is called once per frame

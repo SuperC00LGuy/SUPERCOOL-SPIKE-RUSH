@@ -152,12 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876be5ac86c14b644aa2f6339cc5cbc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrow: {fileID: 1491685870659427534, guid: d88355f4e88bc56498b11db0b10a82f0, type: 3}
-  spawnRate: 1
-  timer: 0
-  heightOffset: 15
-  scalingOffset: 7
-  additionalSpawnerCalc: {fileID: 0}
 --- !u!4 &118735119
 Transform:
   m_ObjectHideFlags: 0
@@ -6233,6 +6227,7 @@ MonoBehaviour:
   sfx1: {fileID: 812104147}
   jumpParticles: {fileID: 1545682086}
   deathParticles: {fileID: 738895482}
+  movementSpeed: 20
 --- !u!58 &1098904691
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6607,6 +6602,9 @@ MonoBehaviour:
   spikeHeightOffset: 25
   arrowHeightOffset: 15
   scalingOffset: 7
+  changeMovement: 0
+  decreaseTime: -5
+  reflectRate: 60
 --- !u!4 &1510683631
 Transform:
   m_ObjectHideFlags: 0
@@ -6651,12 +6649,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c21a26e11e77f4dbf492b5947d95d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spike: {fileID: 3486340563644626307, guid: eec93071f786b854b92b1a48c3b6f3a4, type: 3}
-  spawnRate: 1
-  timer: 0
-  heightOffset: 25
-  scalingOffset: 7
-  additionalSpawnerCalc: {fileID: 0}
 --- !u!4 &1519981018
 Transform:
   m_ObjectHideFlags: 0

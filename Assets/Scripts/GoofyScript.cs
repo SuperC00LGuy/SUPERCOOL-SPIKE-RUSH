@@ -87,10 +87,10 @@ public class GoofyScript : MonoBehaviour
 			}
 		}
     }
-	void increaseMovementSpeed(int movementSpeed)
+	/*void increaseMovementSpeed(int movementSpeed)
 	{
 
-	}
+	}*/
 	void outOfBoundsTeleport(Vector2 newPosition)
 	{
 		transform.position = newPosition;
