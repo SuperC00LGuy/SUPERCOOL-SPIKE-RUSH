@@ -31,7 +31,7 @@ public class bothSpawners : MonoBehaviour
     public bool changeMovement = false;
         //Invoke
     public float decreaseTime = -5f;
-    public float reflectRate = 20.0f;
+    public float reflectRate = 35.0f;
     private float reflectTimer = 0.0f;
 
     void Start()// Start is called before the first frame update
@@ -54,7 +54,7 @@ public class bothSpawners : MonoBehaviour
     {
         if (reflectTimer < reflectRate)
         {
-            reflectTimer += Time.deltaTime;
+            reflectTimer = reflectTimer + Time.deltaTime;
         }
         else
         {

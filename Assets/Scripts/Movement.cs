@@ -7,12 +7,10 @@ public class Movement : MonoBehaviour
 	public float moveSpeed = 40;
     public float leftDeadzone = -70;
     public float rightDeadzone = 70;
-    public int reflection;
     public float movementSpeedRange;
 
     public LogicScript additionalSpikeCalc;
     public bothSpawners changer;
-    public int playerScoreMulti;
 
     //public GameObject logic;
     // Start is called before the first frame update
@@ -33,29 +31,15 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spikeMovementReflection(reflection, getPlayerScore());
+        spikeMovementReflection(getPlayerScore());
 	}
     private int getPlayerScore()
     {
         return additionalSpikeCalc.playerScore;   
     }
-    void spikeMovementReflection(int reflection, int playerScoreMulti)
+    void spikeMovementReflection(int playerScoreMulti)
     {
         movementSpeedRange = Random.Range(0.7f, 2f);
-        /*transform.position = transform.position + (Vector3.left * ((moveSpeed + (float)playerScoreMulti) * movementSpeedRange)) * Time.deltaTime;
-        if (transform.position.x < leftDeadzone)
-        {
-            Destroy(gameObject);
-        }*/
-        /*else
-        {
-            transform.position = transform.position + (Vector3.right * ((moveSpeed + (float)playerScoreMulti) * movementSpeedRange)) * Time.deltaTime;
-
-            if (transform.position.x > rightDeadzone)
-            {
-                Destroy(gameObject);
-            }
-        }*/
         if(!changer.changeDirection())
         {
             transform.position = transform.position + (Vector3.left * ((moveSpeed + (float)playerScoreMulti) * movementSpeedRange)) * Time.deltaTime;
