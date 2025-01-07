@@ -28,10 +28,10 @@ public class bothSpawners : MonoBehaviour
     //Reverse variables
     private float xPos = 69.5f;
     private float yPos = -1.9f;
-    public bool changeMovement = false;
+    public bool changeMovement = true;
         //Invoke
     public float decreaseTime = -5f;
-    public float reflectRate = 35.0f;
+    public float reflectRate = 15.0f;
     private float reflectTimer = 0.0f;
 
     void Start()// Start is called before the first frame update
@@ -150,7 +150,8 @@ public class bothSpawners : MonoBehaviour
     }
     void reflectSpawner(float xPos)
     {
-        Vector3 newXPos = new Vector3(this.xPos, yPos, 0);
+        transform.position = new Vector3(this.xPos, yPos, 0);
+        Debug.Log(xPos);
     }
     public bool changeDirection()
     {
