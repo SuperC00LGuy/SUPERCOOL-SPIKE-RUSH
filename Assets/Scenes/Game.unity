@@ -6065,6 +6065,7 @@ MonoBehaviour:
   death: {fileID: 8300000, guid: 15abb775ed0702243affee524377aadb, type: 3}
   deathToAll: {fileID: 8300000, guid: 9488a104c5ecd7e47b37e6e3c7424085, type: 3}
   highScore: {fileID: 8300000, guid: fd7d40be4cff28e41b674dd8dd130f28, type: 3}
+  audio1TimeRate: 0
 --- !u!4 &812104149
 Transform:
   m_ObjectHideFlags: 0
@@ -6604,7 +6605,7 @@ MonoBehaviour:
   scalingOffset: 7
   changeMovement: 0
   decreaseTime: -5
-  reflectRate: 15
+  reflectRate: 30
 --- !u!4 &1510683631
 Transform:
   m_ObjectHideFlags: 0

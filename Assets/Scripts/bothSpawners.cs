@@ -115,7 +115,7 @@ public class bothSpawners : MonoBehaviour
     }
     public void checkReflectRate()
     {
-        if (reflectRate != 30 && decreaseTime != 0)
+        if (reflectRate != 20 && decreaseTime != 0)
         {
             reflectRate += decreaseTime;
         }

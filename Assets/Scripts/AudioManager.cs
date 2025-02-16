@@ -16,17 +16,27 @@ public class AudioManager : MonoBehaviour
     public AudioClip deathToAll;
     public AudioClip highScore;
 
+    public float backgroundTimeRate = 0.0f;
+    public const float BACKGROUNDTIMER = 220.0f;
 
     void Start()
     {
-        musicSource.clip = gameBackground;
-        musicSource.PlayOneShot(musicSource.clip);
+        playGameBackground();
     }
 
     
     void Update()
     {
-        
+        if (backgroundTimeRate < BACKGROUNDTIMER)
+        {
+            backgroundTimeRate = backgroundTimeRate + Time.deltaTime;
+        }
+        else
+        {
+            Debug.Log("SHOULD HAVE PLAYED AGAIN");
+            playGameBackground();
+            backgroundTimeRate = 0;
+        }
     }
     public void playMenuBackground()
     {
@@ -46,6 +56,11 @@ public class AudioManager : MonoBehaviour
     public void playNewHighScore()
     {
         musicSource.clip = highScore;
+        musicSource.PlayOneShot(musicSource.clip);
+    }
+    public void playGameBackground()
+    {
+        musicSource.clip = gameBackground;
         musicSource.PlayOneShot(musicSource.clip);
     }
 }
