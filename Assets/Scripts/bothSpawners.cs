@@ -31,7 +31,7 @@ public class bothSpawners : MonoBehaviour
     public bool changeMovement = true;
         //Invoke
     public float decreaseTime = -5f;
-    public float reflectRate = 15.0f;
+    public float reflectRate = 40.0f;
     private float reflectTimer = 0.0f;
 
     void Start()// Start is called before the first frame update
@@ -67,15 +67,15 @@ public class bothSpawners : MonoBehaviour
     {
         if(changeMovement)
         {
-            reflectSpawner(xPosition);
             xPosition = Mathf.Abs(xPosition);
+            reflectSpawner(xPosition);
             changeMovement = false;
             Debug.Log("changeMovmement is false");
         }
         else
         {
-            reflectSpawner(xPosition);
             xPosition = -(xPosition);
+            reflectSpawner(xPosition);
             changeMovement = true;
             Debug.Log("changeMovement is true");
         }
@@ -150,7 +150,7 @@ public class bothSpawners : MonoBehaviour
     }
     void reflectSpawner(float xPos)
     {
-        transform.position = new Vector3(this.xPos, yPos, 0);
+        transform.position = new Vector3(xPos, yPos, 0);
         Debug.Log(xPos);
     }
     public bool changeDirection()

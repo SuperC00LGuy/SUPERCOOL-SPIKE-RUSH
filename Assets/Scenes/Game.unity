@@ -6604,7 +6604,7 @@ MonoBehaviour:
   scalingOffset: 7
   changeMovement: 0
   decreaseTime: -5
-  reflectRate: 60
+  reflectRate: 15
 --- !u!4 &1510683631
 Transform:
   m_ObjectHideFlags: 0
