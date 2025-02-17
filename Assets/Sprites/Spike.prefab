@@ -47,7 +47,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 40
-  deadzone: -125
+  leftDeadzone: -70
+  rightDeadzone: 70
+  movementSpeedRange: 0
+  additionalSpikeCalc: {fileID: 0}
+  changer: {fileID: 0}
 --- !u!212 &-4578818159586784312
 SpriteRenderer:
   m_ObjectHideFlags: 0

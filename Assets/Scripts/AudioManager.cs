@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip highScore;
 
     public float backgroundTimeRate = 0.0f;
-    public const float BACKGROUNDTIMER = 220.0f;
+    public const float BACKGROUNDTIMER = 260.0f;
 
     void Start()
     {
