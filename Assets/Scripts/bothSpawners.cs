@@ -30,8 +30,8 @@ public class bothSpawners : MonoBehaviour
     private float yPos = -1.9f;
     public bool changeMovement = true;
         //Invoke
-    public float decreaseTime = -5f;
-    public float reflectRate = 40.0f;
+    public float decreaseTime = -1f;
+    public float reflectRate = 12.0f;
     private float reflectTimer = 0.0f;
 
     void Start()// Start is called before the first frame update
@@ -115,7 +115,7 @@ public class bothSpawners : MonoBehaviour
     }
     public void checkReflectRate()
     {
-        if (reflectRate != 10 && decreaseTime != 0)
+        if (reflectRate != 8 && decreaseTime != 0)
         {
             reflectRate += decreaseTime;
         }

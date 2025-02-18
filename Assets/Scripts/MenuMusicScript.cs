@@ -8,9 +8,9 @@ public class MenuMusicScript : MonoBehaviour
 
     void Start()
     {
-        menuMusic = FindObjectOfType<AudioManager>();
+        /*menuMusic = FindObjectOfType<AudioManager>();
         menuMusic.playMenuBackground();
-        DontDestroyOnLoad(menuMusic);
+        DontDestroyOnLoad(menuMusic);*/
     }
 
     // Update is called once per frame

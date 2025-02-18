@@ -14,6 +14,8 @@ public class GoofyScript : MonoBehaviour
     public GameObject spike;
     public Collider2D colliderEN;
 
+	public PauseMenu pauseScreen;
+
 	public ArrowMovement arrowReflection;
 	public GameObject arrowMovement;
 	public Movement spikeReflection;
@@ -37,11 +39,13 @@ public class GoofyScript : MonoBehaviour
 	{
 		logic1 = logic.GetComponent<LogicScript>();
 		appleSpawner = apps.GetComponent<AppleSpawnerScript>();
-		sfx = sfx1.GetComponent<AudioManager>();
+		this.pauseScreen = FindObjectOfType<PauseMenu>();
+        sfx = sfx1.GetComponent<AudioManager>();
 		/*arrowReflection = arrowMovement.GetComponent<ArrowMovement>();
 		spikeReflection = spikeMovement.GetComponent<Movement>();*/
 
-
+		if (pauseScreen == null)
+			Debug.Log("PAUSE SCREEN IS NULL");
     }
 
 	void Update()
@@ -84,6 +88,10 @@ public class GoofyScript : MonoBehaviour
 			if (transform.position.y < -32.5)
 			{
 				outOfBoundsTeleport(new Vector2(transform.position.x, 32.5f));
+			}
+			if(Input.GetKeyDown(KeyCode.Escape))
+			{
+				pauseScreen.pauseGame();
 			}
 		}
     }

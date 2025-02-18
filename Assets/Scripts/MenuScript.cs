@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
+    public bool game;
     public void PlayGame()
     {
         SceneManager.LoadScene(2);
+        game = true;
     }
     public void QuitGame()
     {
@@ -17,5 +19,6 @@ public class MenuScript : MonoBehaviour
     public void Settings()
     {
         SceneManager.LoadScene(1);
+        game = false;
     }
 }
